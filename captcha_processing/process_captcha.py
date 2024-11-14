@@ -84,8 +84,7 @@ def rotate_integrate(colored_img_list, num=4, size=32, std_row=80, std_col=460):
     process_list = []
     
     for i in range(min(num, len(colored_img_list))):
-        rand_idx = random.randint(0, len(colored_img_list) - 1)
-        img = colored_img_list[rand_idx]
+        img = colored_img_list[i]
         img = cv2.resize(img, (size, size), interpolation=cv2.INTER_AREA)
         img = sharpen_image(img)
         img = transparent_background(img)
